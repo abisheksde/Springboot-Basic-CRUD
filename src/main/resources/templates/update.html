@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Update Example</title>
+<link rel="stylesheet" th:href="@{../css/styles.css}">
+</head>
+<body>
+   <div th:if="${message}" th:text=${message}></div>
+   <form th:action="@{/update/}+${id}" method="post">
+			<div>
+	            <label> Name : <input type="text" name="name" th:value="${productDetails.name}" /></label>
+	        </div><br>
+	        <div>
+	            <label> Description : <textarea type="description" name="description" th:value="${productDetails.description}"></textarea></label>
+	        </div><br>
+	        <div>
+	            <label> price: <input type="number" name="price" th:value="${productDetails.price}" /></label>
+	        </div><br>
+	        <div>
+	            <input type="submit" value="submit" />
+	        </div>
+   </form>
+</body>
+</html>

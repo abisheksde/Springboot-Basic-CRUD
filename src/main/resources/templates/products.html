@@ -1,0 +1,20 @@
+<html>
+<body>
+<table border="1">
+   <tr>
+     <th>Name</th>
+     <th>Description</th>
+     <th>Price</th>
+	 <th>Edit</th>
+	 <th>Delete</th>
+   </tr>
+   <tr th:each="product : ${products}">
+      <td th:text="${product.name}"></td>
+      <td th:text="${product.description}"></td>
+      <td th:text="${product.price}"></td>
+	  <td> <a th:href="@{/update/{id}(id=${product.id})}" class="btn btn-warning">Edit</a> </td>
+	   <td> <a th:href="@{/delete/{id}(id=${product.id})}" class="btn btn-danger" onclick=" $('#myModal').modal();">Delete </a>  </td>
+   </tr>
+</table>
+</body>
+</html>
